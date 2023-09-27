@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>*
+        {
+            font-family: 'Open Sans', sans-serif;
+        
+        }
+        .background
+        {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: url("https://media.istockphoto.com/id/1037573870/photo/technology-network.webp?b=1&s=170667a&w=0&k=20&c=aCHo9kM3yQHgl3kU4wyesPFEII2y9ctRZKBWkyorEPg=");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #passw
+        {
+            color:#fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .mybox {
+            width: 500px;
+            /* height: 300px; */
+            background-color: #161a1bbf;
+            color: #fff;
+            padding: 40px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        .mybox  h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        }
+        .mybox label {
+        font-size: 25px;
+        }
+        input {
+        width: 40%;
+        font-size: 18px;
+        padding: 7px;
+        /* margin-left: 18px; */
+        margin: 10px;
+        }
+        
+        input[type="submit"]
+         {
+            background-color: #161a1bbf;
+            /* background-color: #00292d; */
+        color: white;
+        border-radius: 30px;
+        width: unset;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 16px 40px;
+        border: 1px solid #fff;
+        cursor: pointer;
+        }
+        </style>
+    <div class="background">
+        <div class="mybox">
+            <h1>LOGIN</h1>
+            <form action="" onsubmit="return myform()">
+                <label for="">Username</label>
+                <input type="text" name="user" id="user" value=""><br>
+    
+                <label for="">Password</label>
+                <input type="password" name="pass" id="pass" value=""><br>
+                <span id="passw"></span><br>
+    
+                <label for="">Confirm password</label>
+                <input type="password" name="confirm" id="confirm" value="">
+                <span id="con_passw"></span><br><br>
+    
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div> 
+</body>
+</html>
+<script>  
+function myform() {    
+    var pw1 = document.getElementById("pass").value;  
+    var pw2 = document.getElementById("confirm").value;  
+      
+    
+    //check empty password field  
+    if(pw1 == "") 
+    { 
+      var msg1= document.getElementById("passw")
+      msg1.innerHTML = "**Fill the password please!";
+      return false;
+      
+    }  
+    
+    
+    
+    //check empty confirm password field  
+    if(pw2 == "") 
+    { 
+      var msg2=  document.getElementById("con_passw")
+     msg2.innerHTML = "**Enter the password please!"; 
+     return false;
+    }  
+   
+
+     
+    //minimum password length validation  
+    if(pw1.length < 8)
+     { 
+      var msg1 =document.getElementById("passw")
+      msg1.innerHTML = "**Password length must be atleast 8 characters";  
+      return false;
+
+      
+      
+    }  
+  
+    //maximum length of password validation  
+     if(pw1.length > 15) 
+     { 
+      var msg1=  document.getElementById("passw")
+     msg1.innerHTML = "**Password length must not exceed 15 characters";  
+     return false;
+
+      
+    }  
+    
+    if(pw1 != pw2)
+     { 
+      var msg2= document.getElementById("con_passw")
+      msg2.innerHTML = "**Passwords are not same";  
+      return false;
+      
+      
+    }
+     else
+      {  
+      alert ("Your password created successfully");  
+      document.write("JavaScript form has been submitted successfully");  
+    }  
+ }  
+ myform();
+  
+
+
+    
+
+</script>
